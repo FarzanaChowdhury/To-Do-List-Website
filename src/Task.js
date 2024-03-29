@@ -29,17 +29,22 @@ export const ChangeTask = (props) => {
   return (
     <div>
       {isEditing ? (
-        <div>
+        <div >
           <input value={updatedTaskName} onChange={handleInputChange} />
           <button onClick={handleOkClick}>OK</button>
           <button onClick={handleCancelClick}>Cancel</button>
         </div>
       ) : (
-        <div>
-          <h2>{props.taskName}</h2>
+        <div className='tasks'> 
+        <div className='taskDiv'>
+          <div className='taskname'>
+          <h2>{props.taskName}</h2></div>
+          <div className='buttons'>
           <button onClick={() => props.deleteTask(props.id)}> X </button>
           <button id="Edit" onClick={handleEditClick}>Edit</button>
         </div>
+        </div>
+         </div>
       )}
     </div>
   );
